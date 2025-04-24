@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1901 - 1910</title>
+        <style>
+         .photo {
+          position: relative;
+          display: inline-block;
+          margin: 10 px;
+          border: 1px solid #ccc;
+        }                        
+        .photo img {
+          width: 300px;
+          height: auto;
+          display: block;
+        }
+        .tag {
+          position: absolute;
+          background-color: rgba(0,0,0,0.7);
+          color: white;
+          padding: 2px 5px;
+          font-family: Courier 'Courier New', Courier, monospace;
+          font-size: 14px;
+          display: none;
+          pointer-events: none;
+                    margin-top: 2px;
+        }
+                  </style>
+                </head>
+                <body>
+                  <h1>1901 - 1910</h1>
+                     <div class="photo" onmousemove="showTag(event, this)"onmouseleave="hideTag(this)">
+                       <img src="https://1drv.ms/i/c/eefcfbd3c07cbfb5/EbW_fMDT-_wggO4x3wAAAAABFcZx4ikBsnzmiqjvm-7Qdw?e=dPaOmV" alt="1902 - Annie Kortman met haar vader Franciscus Albertus Gerardus Kortman">
+                       <div class="tag"> data-x="100" data-y="120">Annie Kortman</div>
+                       <div class="tag"> data-x="200" data-y="130">Franciscus Albertus Gerardus Kortman</div>
+                       </div>
+                       
+       <script>
+        function showTag(event, container) {
+          const tags = container.querySelectorAll('.tag');
+           tags.forEach(tag => {
+            const x = parseInt(tag.dataset.x);
+            const y = parseInt(tag.dataset.y);
+            tag.style.left = x + 'px';
+            tag.style.top = y + 'px';
+            tag.style.display = 'block';
+           })
+        }
+        function hideTag(container) {
+          const tags = container.querySelectorAll('.tag'); 
+          tags.forEach(tag => {
+            tag.style.display = 'none';
+          })
+        }
+       </script>
+      </body>
+  </html>
